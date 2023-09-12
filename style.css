@@ -1,0 +1,55 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.btn {
+  display: flex;
+}
+.btn a {
+  display: inline-block;
+  position: relative;
+  font-size: 18px;
+  color: #3a3a3a;
+  padding: 10px 15px;
+  border: 1px solid #3a3a3a;
+  text-decoration: none;
+  overflow: hidden;
+}
+.btn a::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -10px;
+  width: 0%;
+  height: 100%;
+  background-color: #3a3a3a;
+  transform: skew(-25deg);
+  transform-origin: right;
+  transition: width 0.3s ease-in-out;
+  z-index: -1;
+}
+.btn a:hover::after {
+  width: 150%;
+  left: -10px;
+  transform-origin: left;
+}
+.btn a:hover {
+  color: #fff;
+  transition: all 0.5s ease;
+}
+.btn .btn-price {
+  border-radius: 50px 0 0 50px;
+  border-right: none;
+}
+.btn .btn-add {
+  border-radius: 0 50px 50px 0;
+}
